@@ -1,2 +1,0 @@
-cd ~/_publishing && rundockerasciidoctor
-
