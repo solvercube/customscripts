@@ -12,16 +12,16 @@
 
 
 
-A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environment and manage related assets easily under **WSL2**.
+A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environment and manage related assets easily under **WSL**.
 
 
 
 ## 📋 Requirements
 
-- ✅ WSL2 installed and properly configured
+- ✅ WSL (ie, WSL2) installed and properly configured
 - ✅ Docker Desktop installed and running
-- ✅ A `_publishing` directory under your home (`~/_publishing`)
-- ✅ A `scripts` directory under your home (`~/scripts`)
+- ✅ A `_publishing` directory under your WSL home (`~/_publishing`)
+- ✅ A `scripts` directory under your WSL home (`~/scripts`)
   
   - Place all provided Bash scripts into `~/scripts`
 
@@ -59,7 +59,7 @@ A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environme
   
   - Your `~/scripts` folder into the container's `/scripts`
 
-- Makes your local publishing documents and personal scripts available inside the container.
+- Makes your local publishing "path" and custom scripts available inside the container.
 
 **Usage:**
 
@@ -73,13 +73,13 @@ A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environme
 
 **Description:**
 
-- Initializes a `reveal.js` presentation environment inside the container
+- Initializes a `reveal.js` presentation environment ==inside the container==
 
-- Helps you prepare a working directory for publishing environment via the Asciidoctor toolchain.
+- Helps you prepare a publishing environment via the Asciidoctor toolchain.
 
 **Options:**
 
-- `--basic`:
+- `--basic`: 
   - Creates a minimal structure with essential files only.
 - `--full`:
   - Clones the full `reveal.js` GitHub repository.
@@ -96,7 +96,9 @@ A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environme
 
 1. 🔥 Start Docker Desktop.
 
-2. 📁 Ensure your publishing environment is set up:
+2. 🔥 Start a WSL terminal session.
+
+3. 📁 Ensure your publishing environment is set up:
 
    ```
    mkdir -p ~/scripts
@@ -107,18 +109,18 @@ A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environme
    sudo ln -sf <your-content-path> ~/_publishing
    ```
 
-3. 🚀 Launch your publishing Docker environment:
+4. 🚀 Launch your publishing Docker environment:
 
    ```
    ~/scripts/gopublishing
    ```
 
-4. 🎤 (Optional) Initialize Reveal.js setup:
+5. 🎤 (Optional) Initialize Reveal.js setup:
 
    ```
-   ~/scripts/doinitrevealjs --basic
+   /scripts/doinitrevealjs --basic
    # or
-   ~/scripts/doinitrevealjs --full
+   /scripts/doinitrevealjs --full
    ```
 
    
@@ -130,13 +132,12 @@ A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environme
 - **Docker daemon not running:** Start Docker Desktop manually before running scripts.
 
 - **Missing _publishing link:** Create it using:
-  
+
   ```
   sudo ln -sf <your-content-path> ~/_publishing
   ```
 
-  **Scripts not found:** Ensure they are placed under `~/scripts` and are executable (`chmod +x ~/scripts/*`).
-  
+- **Scripts not found:** Ensure they are placed under `~/scripts` and are executable (`chmod +x ~/scripts/*`).
 
 
 
