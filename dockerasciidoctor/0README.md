@@ -96,9 +96,9 @@ A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environme
 
 1. 🔥 Start Docker Desktop.
 
-2. 🔥 Start a WSL terminal session.
+2. 🔥 Launch a WSL terminal session.
 
-3. 📁 Ensure your publishing environment is set up:
+3. 📁 If not already done, set up your publishing environment:
 
    ```
    mkdir -p ~/scripts
