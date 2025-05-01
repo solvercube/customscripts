@@ -1,0 +1,31 @@
+#!/bin/bash
+# update: 2025-05-01
+
+# Check if the _publishing directory exists
+if [ ! -d "$HOME/_publishing" ]; then
+    echo "Error: Directory '$HOME/_publishing' does not exist."
+    echo "Suggestion: create one with a command like:"
+    echo "    sudo ln -sf <your-desired-path> \$HOME/_publishing"
+    exit 1
+fi
+
+# Check if docker command is available
+if ! command -v docker &> /dev/null; then
+    echo "Error: 'docker' command not found."
+    echo "Suggestion: Install Docker Desktop or start your Docker service."
+    exit 1
+fi
+
+# Check if Docker engine (daemon) is running
+if ! docker info &> /dev/null; then
+    echo "Error: Docker daemon is not running."
+    echo "Suggestion: Please start Docker Desktop or your Docker engine."
+    exit 1
+fi
+
+# If all checks pass, proceed
+cd "$HOME/_publishing" || exit 1
+
+# Run the rundockerasciidoctor script
+rundockerasciidoctor
+
