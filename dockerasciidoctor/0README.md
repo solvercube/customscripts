@@ -2,7 +2,7 @@
 
 - Update: 2025-05-01
 
-- Sources:
+- References:
   
   - https://learn.microsoft.com/en-us/windows/wsl/
   
@@ -13,6 +13,13 @@
 
 
 A minimal set of Bash scripts to launch a **Docker-based Asciidoctor** environment and manage related assets easily under **WSL**.
+
+> 🚀 **TESTED ENVIRONMENT**
+>
+> - Intel i7-equipped laptop (x64-based) running on Windows 11
+>   - Windows version: 24H2 (OS Build 26100.3775)
+>   - Docker version:  28.0.4, build b8034c0
+>   - WSL version:  2.4.13.0
 
 
 
